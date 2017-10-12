@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:body>
+        <ui:composition>
+            <nav class="light-blue lighten-1" role="navigation">
+                <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo right">Portfolio of Doom</a>
+                    <ul id="dropdown1" class="dropdown-content">
+                        <ui:include src="./pages.xhtml" />
+                    </ul>
+                    <ul class="left hide-on-med-and-down">
+                        <a class="dropdown-button" href="#!" data-activates="dropdown1">Projects<i class="material-icons right">arrow_drop_down</i></a>
+                    </ul>
+                    <ul id="nav-mobile" class="side-nav">
+                        <li class="disabled"><a href="#"><b>Projects</b></a></li>
+                        <li class="divider"></li>
+                        <ui:include src="./pages.xhtml" />
+                    </ul>
+                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                </div>
+            </nav>
+        </ui:composition>
+    </h:body>
+</html>
+
