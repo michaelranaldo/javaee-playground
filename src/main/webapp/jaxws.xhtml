@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>JAX-WS Example</title>
+        <ui:include src="./resources/jsf/stylesheets.xhtml" />
+    </h:head>
+    <h:body>
+        <ui:include src="./resources/jsf/navbar.xhtml" />
+
+
+        <div class="container">
+            <div class="row center"/>
+            <div class="row center">
+                <h5 class="header grey-text col s12">Test JAX-WS Methods Directly:</h5>
+                <a class="btn waves-effect waves-light col s4 offset-s4" 
+                   href="./JAXWSEndpointImplService?Tester">JAX WS Tester</a>
+            </div>
+            
+            <div class="row center">
+                <h5 class="header grey-text col s12">Access WSDL:</h5>
+                <a class="btn waves-effect waves-light col s4 offset-s4" 
+                   href="./JAXWSEndpointImplService?wsdl">WSDL</a>
+            </div>
+            
+            <div class="row center">
+                <h5 class="header grey-text col s12">Download Client:</h5>
+                 <a class="btn waves-effect waves-light col s4 offset-s4" 
+               href="./resources/files/JAXWSClient-1.0-SNAPSHOT-jar-with-dependencies.jar">Standalone Client</a>
+            </div>
+        </div>
+
+
+        <ui:include src="./resources/jsf/scripts.xhtml" />
+
+    </h:body>
+</html>
+
