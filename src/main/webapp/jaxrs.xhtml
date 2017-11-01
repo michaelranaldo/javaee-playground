@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>JAX-RS</title>
+        <ui:include src="./resources/jsf/stylesheets.xhtml" />
+    </h:head>
+    <h:body>
+        <ui:include src="./resources/jsf/navbar.xhtml" />
+        <div class="container">
+            <div class="row center">
+                <h2 class="header left light-blue-text">Examples:</h2>
+            </div>
+            <div class="row center">
+                <div class="collection">
+                    <a href="./webresources/helloworld/plain" class="collection-item"><span class="badge"></span>Cliche Message [Plaintext]</a>
+                    <a href="./webresources/helloworld/html" class="collection-item"><span class="badge"></span>Cliche Message [HTML]</a>
+                    <a href="./webresources/helloworld/boringfancy/Gavin" class="collection-item"><span class="badge"></span>Fancy Message for Gavin</a>
+                </div>
+            </div>
+            <div class="row center">
+                <h5 class="col s3 left header light-blue-text">Fancy Cliche</h5>
+                <form action="./webresources/helloworld/fancyfancy" method="get">
+                    <input type="text" id="username" class="validate col s4" name="name" required="" />
+                    <input type="submit" class="btn waves-effect waves-light col s3 offset-s1" value="Submit" />
+                </form>
+            </div>
+            <div class="row center">
+                <h5 class="col s3 left header light-blue-text">Form Cliche</h5>
+                <form action="./webresources/helloworld/form" method="post">
+                    <input type="text" id="username" class="validate col s4" name="name" required="" />
+                    <input type="submit" class="btn waves-effect waves-light col s3 offset-s1" value="Submit" />
+                </form>
+            </div>
+            <div class="row center">
+                <div class="collection">
+                    <a href="./webresources/helloworld/examples/a/multi/example" class="collection-item"><span class="badge"></span>A multi-example going to /a/multi/example</a>
+                    <a href="./webresources/helloworld/list/why/whyy/whyyy" class="collection-item"><span class="badge"></span>A multi-example with some interesting questions</a>
+                    <a href="./webresources/helloworld/headers" class="collection-item"><span class="badge"></span>View some headers</a>
+                </div>
+            </div>
+        </div>
+        <ui:include src="./resources/jsf/scripts.xhtml" />
+    </h:body>
+</html>
