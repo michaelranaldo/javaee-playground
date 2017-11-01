@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>JSON-P Example</title>
+        <ui:include src="./resources/jsf/stylesheets.xhtml" />
+    </h:head>
+
+    <h:body>
+        <ui:include src="./resources/jsf/navbar.xhtml" />
+        <div class="container">
+            <div class="row center">
+                <h5 class="header grey-text col s12">Upload a file</h5>
+                <h:form enctype="multipart/form-data" class="col s12">
+                    <h:inputFile class="input-field file-field" id="file" value="#{fileUploadBackingBean.file}"/>
+                    <h:commandButton value="Upload" action="#{fileUploadBackingBean.upload}">
+                    </h:commandButton>
+
+                    <div class="divider"/>
+                    <h5 class="header grey-text col s12">Read as a Stream:</h5>
+                    <div class="input-field">
+                        <h:inputTextarea rows="5" class="row center col s12" value="#{fileUploadBackingBean.text}" readonly="true"/>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+        <ui:include src="./resources/jsf/scripts.xhtml" />
+    </h:body>
+</html>
+
