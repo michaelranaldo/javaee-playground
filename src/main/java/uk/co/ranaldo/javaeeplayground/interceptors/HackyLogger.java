@@ -21,7 +21,6 @@ public class HackyLogger {
     }
     
     public String getLog() {
-        System.out.println("hello");
         return log;
     }
 
