@@ -13,18 +13,40 @@
         <ui:include src="./resources/jsf/navbar.xhtml" />
         <div class="container">
             <div class="row center">
+                <h5 class="left grey-text col s12">Upload text</h5>
+                <h:form enctype="multipart/form-data" class="col s12">
+                    <h:inputTextarea class="materialize-textarea  input-field file-field col s6"
+                                     value="#{fileUploadBackingBean.rawText}"/>
+                    <h:commandButton class="btn waves-effect waves-light col s4 offset-s1" value="Parse Text" 
+                                     action="#{fileUploadBackingBean.formatText()}">
+                    </h:commandButton>
+                </h:form>
+                <div class="divider"/>
                 <h5 class="header grey-text col s12">Upload a file</h5>
                 <h:form enctype="multipart/form-data" class="col s12">
-                    <h:inputFile class="input-field file-field" id="file" value="#{fileUploadBackingBean.file}"/>
-                    <h:commandButton value="Upload" action="#{fileUploadBackingBean.upload}">
+                    <h:inputFile class="input-field file-field file-path-wrapper col s6" id="file" 
+                                 value="#{fileUploadBackingBean.file}" required="true"/>
+                    <h:commandButton class="btn waves-effect waves-light col s4 offset-s1" value="Parse File" 
+                                     action="#{fileUploadBackingBean.formatFile()}">
                     </h:commandButton>
-
-                    <div class="divider"/>
-                    <h5 class="header grey-text col s12">Read as a Stream:</h5>
-                    <div class="input-field">
-                        <h:inputTextarea rows="5" class="row center col s12" value="#{fileUploadBackingBean.text}" readonly="true"/>
-                    </div>
                 </h:form>
+                <div class="divider"/>
+                <h5 class="left grey-text col s12">Make your own JSON</h5>
+                <h:form enctype="multipart/form-data">
+                    <h6 class="left light-blue-text col-s1 offset-s1">Name:</h6>
+                    <h:inputText id="aKey" class="materialize-textarea input-field col s2" 
+                                 value="#{fileUploadBackingBean.aKey}" required="true"/>
+                    <h6 class="left light-blue-text col-s1">Value:</h6>
+                    <h:inputText id="aValue" class="materialize-textarea  input-field file-field col s2"
+                                 value="#{fileUploadBackingBean.aValue}" required="true"/>
+                    <h:commandButton class="btn waves-effect waves-light col s4 offset-s1" value="Parse Text" 
+                                     action="#{fileUploadBackingBean.createJson()}">
+                    </h:commandButton>
+                </h:form>
+                <h5 class="header light-blue-text col s12">Output:</h5>
+                <div class="input-field">
+                    <h:inputTextarea rows="5" class="row center col s12" value="#{fileUploadBackingBean.formattedText}" readonly="true"/>
+                </div>
             </div>
         </div>
         <ui:include src="./resources/jsf/scripts.xhtml" />
