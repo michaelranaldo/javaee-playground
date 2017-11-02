@@ -35,10 +35,10 @@
                 <h:form enctype="multipart/form-data">
                     <h6 class="left light-blue-text col-s1 offset-s1">Name:</h6>
                     <h:inputText id="aKey" class="materialize-textarea input-field col s2" 
-                                 value="#{fileUploadBackingBean.aKey}" required="true"/>
+                                 value="#{fileUploadBackingBean.key}" required="true"/>
                     <h6 class="left light-blue-text col-s1">Value:</h6>
                     <h:inputText id="aValue" class="materialize-textarea  input-field file-field col s2"
-                                 value="#{fileUploadBackingBean.aValue}" required="true"/>
+                                 value="#{fileUploadBackingBean.value}" required="true"/>
                     <h:commandButton class="btn waves-effect waves-light col s4 offset-s1" value="Parse Text" 
                                      action="#{fileUploadBackingBean.createJson()}">
                     </h:commandButton>

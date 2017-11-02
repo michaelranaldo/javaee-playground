@@ -3,12 +3,10 @@ package uk.co.ranaldo.javaeeplayground.jsonp;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
-import java.math.BigDecimal;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
-import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -28,8 +26,8 @@ public class fileuploadBackingBean {
     private String text;
     private String formattedText;
     private String rawText;
-    private String aKey;
-    private String aValue;
+    private String key;
+    private String value;
 
     /**
      * Upload the file from the form, stick it here
@@ -71,7 +69,7 @@ public class fileuploadBackingBean {
     }
     
     public void createJson() {
-        JsonObject jsonObject = Json.createObjectBuilder().add(aKey, aValue).build();
+        JsonObject jsonObject = Json.createObjectBuilder().add(key, value).build();
         formattedText = jsonObject.toString();
     }
 
@@ -107,20 +105,19 @@ public class fileuploadBackingBean {
         this.rawText = rawText;
     }
 
-    public String getaKey() {
-        return aKey;
+    public String getKey() {
+        return key;
     }
 
-    public void setaKey(String aKey) {
-        this.aKey = aKey;
+    public void setKey(String key) {
+        this.key = key;
     }
 
-    public String getaValue() {
-        return aValue;
+    public String getValue() {
+        return value;
     }
 
-    public void setaValue(String aValue) {
-        this.aValue = aValue;
+    public void setValue(String value) {
+        this.value = value;
     }
-
 }
