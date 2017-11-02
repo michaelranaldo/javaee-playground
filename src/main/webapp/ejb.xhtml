@@ -3,107 +3,36 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>CDI Example</title>
         <ui:include src="./resources/jsf/stylesheets.xhtml" />
     </h:head>
     <h:body>
         <ui:include src="./resources/jsf/navbar.xhtml" />
-        #{cdiBackingBean.onload()}
-        <!-- Bean Data -->
         <div class="container">
             <div class="row center">
-                <div class="col s12">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Scope</th>
-                                <th>ID</th>
-                                <th>Iteration</th>
-                                <th>Stored Data</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Request</td>
-                                <td>#{cdiBackingBean.reqBean.ID}</td>
-                                <td>#{cdiBackingBean.reqBean.count}</td>
-                                <td>#{cdiBackingBean.reqBean.data}</td>
-                            </tr>
-                            <tr>
-                                <td>Session</td>
-                                <td>#{cdiBackingBean.sesBean.ID}</td>
-                                <td>#{cdiBackingBean.sesBean.count}</td>
-                                <td>#{cdiBackingBean.sesBean.data}</td>
-                            </tr>
-                            <tr>
-                                <td>Conversation</td>
-                                <td>#{cdiBackingBean.conBean.ID}</td>
-                                <td>#{cdiBackingBean.conBean.count}</td>
-                                <td>#{cdiBackingBean.conBean.data}</td>
-                            </tr>
-                            <tr>
-                                <td>Application</td>
-                                <td>#{cdiBackingBean.appBean.ID}</td>
-                                <td>#{cdiBackingBean.appBean.count}</td>
-                                <td>#{cdiBackingBean.appBean.data}</td>
-                            </tr>
-                            <tr>
-                                <td>Dependent</td>
-                                <td>#{cdiBackingBean.depBean.ID}</td>
-                                <td>#{cdiBackingBean.depBean.count}</td>
-                                <td>#{cdiBackingBean.depBean.data}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <h5 class="left grey-text col s12">Test EJBs:</h5>
             </div>
             <div class="row center">
-                <div class="col s12">
-                    <h5 class="header left grey-text">Control Session and Request Scopes:</h5>
-                    <div class="col s6">
-                        <h:form>
-                            <h:commandButton class="waves-effect waves-light btn"  value="End Session Scope" action="#{cdiBackingBean.endSession()}">
-                                <f:ajax execute="@form" />
-                            </h:commandButton>
-                        </h:form>
-                    </div>
-                    <div class="col s6">
-                        <h:form>
-                            <h:commandButton class="waves-effect waves-light waves-red btn" value="Refresh Page" action="#{cdiBackingBean.refreshPage()}"/>
-                        </h:form>
-                    </div>
-                </div>
+                <h:form enctype="multipart/form-data" class="col s12">
+                    <h:inputTextarea class="materialize-textarea  input-field file-field col s6"
+                                     value="#{closeEncounterBean.firstGreeting}"/>
+                    <h:commandButton class="btn waves-effect waves-light col s4 offset-s1" value="Get First Contact" 
+                                     action="#{closeEncounterBean.updateFirstGreeting()}">
+                    </h:commandButton>
+                </h:form>
             </div>
             <div class="row center">
-                <div class="col s12">
-                    <h5 class="header left grey-text center">Add Data to Bean:</h5>
-                    <h:form class="col s12 center">
-                        <div class="input-field col s12 m8">
-                            <select name="chosenBean" multiple="true" required="" aria-required="true">
-                                <option value="" disabled="true" selected="true">Select your bean</option>
-                                <option value="req">Request</option>
-                                <option value="ses">Session</option>
-                                <option value="app">Application</option>
-                                <option value="con">Conversation</option>
-                                <option value="dep">Dependent</option>
-                            </select>
-                            <label>Select Bean(s):</label>
-                        </div>
-                        <div class="input-field col s12 m4">
-                            <input name="beanValue" type="text" class="validate" required="" aria-required="true" />
-                            <label>Bean Value</label>
-                        </div>
-                        <div class="input-field col s12 m2">
-                            <h:commandButton class="btn waves-effect waves-light" value="Submit"></h:commandButton>
-                        </div>
-                    </h:form>
-                </div>
+                <h:form enctype="multipart/form-data" class="col s12">
+                    <h:inputTextarea class="materialize-textarea  input-field file-field col s6"
+                                     value="#{closeEncounterBean.secondGreeting}"/>
+                    <h:commandButton class="btn waves-effect waves-light col s4 offset-s1" value="Get Second Contact" 
+                                     action="#{closeEncounterBean.updateSecondGreeting()}">
+                    </h:commandButton>
+                </h:form>
             </div>
         </div>
         <ui:include src="./resources/jsf/scripts.xhtml" />
     </h:body>
 </html>
-
