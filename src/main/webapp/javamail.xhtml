@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>JavaMail</title>
+        <ui:include src="./resources/jsf/stylesheets.xhtml" />
+    </h:head>
+    <h:body>
+        <ui:include src="./resources/jsf/navbar.xhtml" />
+        <div class="container">
+            <div class="row">
+            </div>
+            <div class="row center">
+                <h5 class="header orange-text left">Send Email</h5>
+            </div>
+            <div class="row center">
+                <h:form>
+                    <h6>To:</h6>
+                    <h:inputText class="materialize-textarea  input-field file-field col s6"
+                                     value="#{JavaMailExampleBackingBean.email}"/>
+                    <h6>Content:</h6>
+                    <h:inputTextarea class="materialize-textarea  input-field file-field col s6"
+                                     value="#{JavaMailExampleBackingBean.content}"/>
+                    <h:commandButton class="btn waves-effect waves-light" 
+                                     action="#{JavaMailExampleBackingBean.send()}" 
+                                     value="Send Email">
+                    </h:commandButton>
+                </h:form>
+            </div>
+        </div>
+        <ui:include src="./resources/jsf/scripts.xhtml" />
+    </h:body>
+</html>
+
