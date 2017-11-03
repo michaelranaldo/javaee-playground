@@ -1,7 +1,6 @@
 package uk.co.ranaldo.javaeeplayground.interceptors;
 
 import javax.annotation.ManagedBean;
-import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
